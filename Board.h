@@ -74,6 +74,7 @@ extern "C" {
 #define Board_SDSPI                 EKS_LM4F232_SDSPI0
 #define Board_SPI0                  EKS_LM4F232_SPI0
 #define Board_SPI1                  EKS_LM4F232_SPI3
+#define Board_SPI2                  EKS_LM4F232_SPI2
 #define Board_SPI_CC3000            EKS_LM4F232_SPI3
 #define Board_USBMSCHFatFs          EKS_LM4F232_USBMSCHFatFs0
 #define Board_I2C0                  EKS_LM4F232_I2C0

@@ -132,7 +132,7 @@ Void masterTaskFxn (UArg arg0, UArg arg1)
     UInt transferOK;
 
     /* Initialize SPI handle as default master */
-    masterSpi = SPI_open(Board_SPI0, NULL);
+    masterSpi = SPI_open(Board_SPI2, NULL);
     if (masterSpi == NULL) {
         System_abort("Error initializing SPI\n");
     }
