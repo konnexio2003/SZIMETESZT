@@ -145,7 +145,7 @@ Void SDTask(UArg arg0, UArg arg1)
         if (fresult != FR_OK) {
             System_printf("Error: \"%s\" could not be created\n",
                     inputfile);
-            System_abort("Aborting...\n");
+//mci            System_abort("Aborting...\n");
         }
 
         f_write(&src, textarray, strlen(textarray), &bytesWritten);
@@ -164,7 +164,7 @@ Void SDTask(UArg arg0, UArg arg1)
     fresult = f_open(&dst, outputfile, FA_CREATE_ALWAYS|FA_WRITE);
     if (fresult != FR_OK) {
         System_printf("Error opening \"%s\"\n", outputfile);
-        System_abort("Aborting...\n");
+//mci        System_abort("Aborting...\n");
     }
     else {
         System_printf("Starting file copy\n");
@@ -205,7 +205,7 @@ Void SDTask(UArg arg0, UArg arg1)
     fresult = f_open(&dst, outputfile, FA_READ);
     if (fresult != FR_OK) {
         System_printf("Error opening \"%s\"\n", outputfile);
-        System_abort("Aborting...\n");
+ //mci       System_abort("Aborting...\n");
     }
 
     /* Print file contents */
@@ -281,6 +281,16 @@ const Char testPrompt[] = "\fTest 012345:\r\n";
         if (uart7 == NULL) {
         System_abort("Error opening the UART7");
         }
+//ELM
+//UART_write(uart6, "ATWS\r", 5);
+UART_write(uart6, "ATZ\r", 4);
+UART_read(uart6, inputbuf, 30);
+UART_read(uart6, inputbuf, 30);
+UART_read(uart6, inputbuf, 30);
+UART_read(uart6, inputbuf, 30);
+UART_read(uart6, inputbuf, 30);
+UART_read(uart6, inputbuf, 30);
+UART_read(uart6, inputbuf, 30);
 GPIO_write(Board_GSM_ONOFF,Board_PIN_ON);
 Task_sleep(100);
 GPIO_write(Board_GSM_ONOFF,Board_PIN_OFF);
